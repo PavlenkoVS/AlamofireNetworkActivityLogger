@@ -124,13 +124,13 @@ public class NetworkActivityLogger {
                 
                 self.logDivider()
                 
-                print("\(httpMethod) '\(requestURL.absoluteString)':")
+                print("\(httpMethod) '\(requestURL.absoluteString.removingPercentEncoding ?? requestURL.absoluteString)':")
                 
                 print("cURL:\n\(cURL)")
             case .info:
                 self.logDivider()
                 
-                print("\(httpMethod) '\(requestURL.absoluteString)'")
+                print("\(httpMethod) '\(requestURL.absoluteString.removingPercentEncoding ?? requestURL.absoluteString)'")
             default:
                 break
             }
